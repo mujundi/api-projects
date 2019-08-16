@@ -38,7 +38,7 @@ class UI {
     repos.forEach(repo => {
       output += `
         <li>
-          <a href="${repo.url}">${repo.name}</a>&ensp;|&ensp;${
+          <a href="${repo.html_url}">${repo.name}</a>&ensp;|&ensp;${
         repo.language
       }&ensp;|&ensp;Last Updated: ${repo.updated_at.slice(0, 10)}
           <br>
