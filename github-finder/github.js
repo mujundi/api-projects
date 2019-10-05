@@ -8,15 +8,11 @@ class GitHub {
 
   async getUser(userName) {
     const userResponse = await fetch(
-      `https://api.github.com/users/${userName}?client_id=${this.client_id}&client_secret=${
-        this.client_secret
-      }`
+      `https://api.github.com/users/${userName}?client_id=${this.client_id}&client_secret=${this.client_secret}`
     );
 
     const reposResponse = await fetch(
-      `https://api.github.com/users/${userName}/repos?per_page=${this.repos_count}&sort=${
-        this.repos_sort
-      }&client_id=${this.client_id}&client_secret=${this.client_secret}`
+      `https://api.github.com/users/${userName}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}&client_id=${this.client_id}&client_secret=${this.client_secret}`
     );
 
     const profile = await userResponse.json();
