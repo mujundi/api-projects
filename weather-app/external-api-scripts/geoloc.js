@@ -12,4 +12,14 @@ class Geolocator {
 
     return geocode;
   }
+
+  async getSuggestedCities(string) {
+    const citiesResponse = await fetch(
+      `http://www.mapquestapi.com/search/v3/prediction?key=${this.client_key}&q=${string}&collection=adminArea&limit=8`
+    );
+
+    const response = await citiesResponse.json();
+
+    return response;
+  }
 }

@@ -7,8 +7,10 @@ class Storage {
       this.storage = sessionStorage;
     }
 
-    // default location is Miami, FL
-    this.setLocation({ city: "Miami, FL", coordinates: { lat: 25.775084, lng: -80.194702 } });
+    // default location is Miami, FL if location isn't already stored
+    if (this.storage.getItem("location") === null) {
+      this.setLocation({ city: "Miami, FL", coordinates: { lat: 25.775084, lng: -80.194702 } });
+    }
   }
 
   // Save changes to city and state to storage
